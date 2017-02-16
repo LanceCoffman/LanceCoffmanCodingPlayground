@@ -22,3 +22,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.bgtop {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background: url('/Content/Images/playgroundhome_img.png') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 300px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+  background-color: #5ed0ff;
+}
+
+.jumbotron {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 300px;
+  background:transparent
+}
