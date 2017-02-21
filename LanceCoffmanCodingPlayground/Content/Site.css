@@ -24,12 +24,10 @@ textarea {
 }
 
 .bgtop {
-  margin-top: 0px;
-  margin-bottom: 0px;
   background: url('/Content/Images/playgroundhome_img.png') no-repeat center center;
   position: fixed;
   width: 100%;
-  height: 300px; /*same height as jumbotron */
+  height: 300px;
   top:0;
   left:0;
   z-index: -1;
@@ -37,8 +35,6 @@ textarea {
 }
 
 .jumbotron {
-  margin-top: 0px;
-  margin-bottom: 0px;
   height: 280px;
   background:transparent
 }
