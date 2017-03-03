@@ -1,0 +1,73 @@
+﻿@using LanceCoffmanCodingPlayground.Models;
+
+@model AnimalViewModel
+
+@{
+    ViewBag.Title = "SimpleZoo";
+}
+
+<h2>Simple Zoo</h2>
+
+<h1>Welcome to my Simple Zoo</h1>
+<h4>Please search an animal by Color or Habitat</h4>.
+<h4>Available Colors: Black, Blue, Gray Brown</h4>.
+<h4>Available Habitats: Grass, Woods, Mountains, Water, Trees</h4>.
+
+
+
+<div>
+@using (Html.BeginForm("Index", "SimpleZoo", FormMethod.Get))
+{
+    <p></p>
+    <p></p>
+    <b> Enter in Color and Habitat from choices above: </b>
+   <text>Color</text> @Html.TextBox("color")
+   <text>Habitat</text> @Html.TextBox("habitat")
+    <input type = "submit"
+    name = "submit"
+    value = "Search" />
+    }
+
+<p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Animals.FirstOrDefault().Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Animals.FirstOrDefault().Habitat)
+            </th>
+            <th>
+                Movement
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Animals.FirstOrDefault().Name)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var animal in Model.Animals)
+        {
+            string movement = animal.Movement();
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => animal.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => animal.Habitat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem =>animal.Name)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>
