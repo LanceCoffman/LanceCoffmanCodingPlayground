@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Playing with the Elements (jQuery)";
+}
+
+<style>
+    #bucsplayers, #cowboysplayers {
+        display: none;
+    }
+
+    .ancestors * {
+        display: block;
+        border: 2px solid gray;
+        color: gray;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#bucsshow").click(function () {
+            $("#bucsplayers").slideDown("slow");
+            $('#bucsshow').hide();
+            $('#bucshide').show();
+        });
+
+        $("#cowboysshow").click(function () {
+            $("#cowboysplayers").slideDown("slow");
+            $('#cowboysshow').hide();
+            $('#cowboyshide').show();
+        });
+
+        $("#bucshide").click(function () {
+            $("#bucsplayers").slideUp("slow");
+            $('#bucsshow').show();
+            $('#bucshide').hide();
+        });
+
+        $("#cowboyshide").click(function () {
+            $("#cowboysplayers").slideUp("slow");
+            $('#cowboysshow').show();
+            $('#cowboyshide').hide();
+        });
+
+        $("span").parent().css({ "color": "red", "border": "2px solid red" });
+    });
+
+
+</script>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Playing with the Elements (jQuery)</h2>
+            <h4>This shows Hide, Slide, and Ancestory color styling</h4>
+
+            <div>
+                <input id="bucsshow" class="btn-link" value="Show TAMPA BAY BUCCANEER PLAYERS" type="button">
+                <input id="bucshide" class="btn-link" value="Hide TAMPA BAY BUCCANEER PLAYERS" type="button" style="display: none;">
+                <div id="bucsplayers" class="ancestors">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            TAMPA BAY BUCCANEERS PLAYERS
+                            <span>Ronde Barber</span>
+                            <span>Jameis Winston</span>
+                            <span>Mike Alsott</span>
+                            <span>Mike Evans</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <input id="cowboysshow" class="btn-link" value="Show DALLAS COWBOY PLAYERS" type="button">
+                <input id="cowboyshide" class="btn-link" value="Hide DALLAS COWBOY PLAYERS" type="button" style="display: none;">
+                <div id="cowboysplayers" class="ancestors">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            DALLAS COWBOY PLAYERS
+                            <span>Dak Prescott</span>
+                            <span>Tony Romo</span>
+                            <span>Ezekial Elliot</span>
+                            <span>Dez Bryant </span>
+                            <span>Jason Witten</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+
+
+</body>
