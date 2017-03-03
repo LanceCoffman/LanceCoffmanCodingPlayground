@@ -7,12 +7,14 @@
 }
 
 <h2>Simple Zoo</h2>
-
-<h1>Welcome to my Simple Zoo</h1>
-<h4>Please search an animal by Color or Habitat</h4>.
-<h4>Available Colors: Black, Blue, Gray Brown</h4>.
-<h4>Available Habitats: Grass, Woods, Mountains, Water, Trees</h4>.
-
+<h4>Find an animal by Color or Habitat Only</h4>
+<h4>Available Choices:</h4>
+<p>Color = "Black", Habitat = "Grass", AnimalImage = "c:\Snake.jpg",Name = "Snake" </p>
+<p>Color = "Black", Habitat = "Woods", AnimalImage = "c:\Bear.jpg", Name = "Bear" </p>
+<p>Color = "Blue", Habitat = "Water", AnimalImage = c:\Whale.jpg",Name = "Whale"</p>
+<p>Color = "Blue", Habitat = "Water", AnimalImage = "c:\Fish.jpg",Name = "Fish"</p>
+<p>Color = "Gray", Habitat = "Mountains", AnimalImage = "c:\Goat.jpg",Name = "Goat"</p>
+<p>Color = "Brown", Habitat = "Trees", AnimalImage = "c:\Monkey.jpg", Name = "Monkey"</p>
 
 
 <div>
@@ -43,6 +45,9 @@
             <th>
                 @Html.DisplayNameFor(model => Model.Animals.FirstOrDefault().Name)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Animals.FirstOrDefault().AnimalImage)
+            </th>
 
             <th></th>
         </tr>
@@ -63,6 +68,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem =>animal.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => animal.AnimalImage)
                 </td>
             </tr>
         }

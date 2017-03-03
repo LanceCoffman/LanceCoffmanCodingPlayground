@@ -30,6 +30,7 @@ namespace LanceCoffmanCodingPlayground.Controllers
         // GET: SimpleZoo
         public ActionResult Index(string color, string habitat)
         {
+
             var foundAnimals = new List<IAnimal>();
 
             if (color == null && habitat == null)
@@ -38,11 +39,11 @@ namespace LanceCoffmanCodingPlayground.Controllers
             }
             else if (color == null)
             {
-                foundAnimals = GetAllAnimalsinZoo().Where(x => x.Habitat == habitat).ToList();
+                foundAnimals = GetAllAnimalsinZoo().Where(x => x.Habitat.ToLower() == habitat.ToLower()).ToList();
             }
             else
             {
-                foundAnimals = GetAllAnimalsinZoo().Where(x => x.Color == color && x.Habitat == habitat).ToList();
+                foundAnimals = GetAllAnimalsinZoo().Where(x => x.Color.ToLower() == color.ToLower() && x.Habitat.ToLower() == habitat.ToLower()).ToList();
             }
 
 
